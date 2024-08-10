@@ -25,6 +25,5 @@ Automapper: Simplificação de mapeamentos de objetos.
 
 Cobertura de Testes Backend: Testes de unidade garantindo a qualidade do código.
 
-Cobertura de Testes Frontend: Testes unitários e de integração no front.
 
 Dockerfile: Pronto para containerização, facilitando a execução em qualquer ambiente.
