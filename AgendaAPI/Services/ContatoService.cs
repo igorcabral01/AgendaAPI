@@ -71,7 +71,6 @@ namespace AgendaAPI.Services
             _context.SaveChanges();
             return new NoContentResult();
         }
-
         public IActionResult AtualizarContatoPatch(int id, JsonPatchDocument<UpdateContatosDto> patch)
         {
             var contato = _context.Contato.FirstOrDefault(c => c.Id == id);
@@ -80,15 +79,20 @@ namespace AgendaAPI.Services
             var contatoParaAtualizar = _mapper.Map<UpdateContatosDto>(contato);
             patch.ApplyTo(contatoParaAtualizar);
 
-            if (!TryValidateModel(contatoParaAtualizar))
+            // Validação manual do modelo
+            var validationResults = new List<ValidationResult>();
+            var context = new ValidationContext(contatoParaAtualizar, null, null);
+            if (!Validator.TryValidateObject(contatoParaAtualizar, context, validationResults, true))
             {
-                return new BadRequestObjectResult(ModelState);
+                // Retorna os erros de validação manualmente
+                return new BadRequestObjectResult(validationResults);
             }
 
             _mapper.Map(contatoParaAtualizar, contato);
             _context.SaveChanges();
             return new NoContentResult();
         }
+
 
         public IActionResult DeletaContato(int id)
         {

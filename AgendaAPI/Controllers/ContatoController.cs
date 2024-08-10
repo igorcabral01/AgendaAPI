@@ -24,7 +24,7 @@ namespace AgendaAPI.Controllers
             return _contatoService.AdicionaContato(contatoDto);
         }
 
-        [HttpGet("/Contatos")]
+        [HttpGet("/listarcontatos")]
         public IEnumerable<ReadContatosDto> ContatosCadastrados([FromQuery] int skip = 0, [FromQuery] int take = 50)
         {
             return _contatoService.ContatosCadastrados(skip, take);
