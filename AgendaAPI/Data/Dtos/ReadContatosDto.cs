@@ -9,6 +9,6 @@ namespace AgendaAPI.Data.Dtos
         public required string Email { get; set; }
         public int Telefone { get; set; }
         public DateTime HoraDaConsulta { get; set; } = DateTime.Now;
-        public int Id { get; set; }
+       
     }
 }
