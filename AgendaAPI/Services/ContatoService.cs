@@ -79,12 +79,12 @@ namespace AgendaAPI.Services
             var contatoParaAtualizar = _mapper.Map<UpdateContatosDto>(contato);
             patch.ApplyTo(contatoParaAtualizar);
 
-            // Validação manual do modelo
+          
             var validationResults = new List<ValidationResult>();
             var context = new ValidationContext(contatoParaAtualizar, null, null);
             if (!Validator.TryValidateObject(contatoParaAtualizar, context, validationResults, true))
             {
-                // Retorna os erros de validação manualmente
+               
                 return new BadRequestObjectResult(validationResults);
             }
 
