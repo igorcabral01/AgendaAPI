@@ -2,7 +2,6 @@
 
 .NET Core: Utilizado para construir a API RESTful robusta e escalável.
 
-Vue.js com TypeScript: O poder do front-end moderno, mantendo o código limpo e tipado.
 
 Entity Framework Core: Para mapeamento objeto-relacional (ORM) e fácil manipulação do banco de dados.
 
@@ -16,8 +15,6 @@ Organização e Limpeza do Código: Código limpo e organizado, seguindo as melh
  Diferenciais Implementados
  
 Swagger: Documentação da API para facilitar a integração e testes.
-
-Componentes no Frontend: Vue.js componetizado para melhor manutenção e reusabilidade.
 
 Libs e Frameworks Acessórios:
 
